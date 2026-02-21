@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f5f5f5;
+  --color-mainBackground:#fff;
+  --color-text-title: #1a1a1a;
+  --color-border:#e5e5e5;
+  --shadow-background:0 4px 20px rgba(0, 0, 0, 0.08);
+  --color-bgBtn:#1a1a1a;
+
+  
+}

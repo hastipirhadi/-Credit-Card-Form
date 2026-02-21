@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>-credit-card-form</title>
+  </head>
+  <body class="bg-background flex flex-col justify-center items-center h-svh">
+    <section class="bg-mainBackground p-6 rounded-[10px] ">
+      <p>Payment Details</p>
+      <div>
+        <label for="cardNumber" class="text-[12px] font-medium">Card Number</label>
+        <div
+          class="border-[2px] border-border rounded-[6px] p-1 flex items-center"
+        >
+          <svg
+            width="20px"
+            height="20px"
+            viewBox="0 0 0.375 0.375"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.013 0.138h0.35M0.05 0.238h0.15m0.05 0h0.075M0.013 0.088v0.2a0.025 0.025 0 0 0 0.025 0.025h0.3a0.025 0.025 0 0 0 0.025 -0.025v-0.2a0.025 0.025 0 0 0 -0.025 -0.025h-0.3a0.025 0.025 0 0 0 -0.025 0.025Z"
+              stroke="#999"
+              stroke-width="0.025"
+            />
+          </svg>
+          <input
+            style="border: 0"
+            type="text"
+            name="cardNumber"
+            id="cardNumber"
+            placeholder=" 1234 5678 8901 1234"
+            maxlength="19"
+          />
+        </div>
+      </div>
+      <div class="flex items-center justify- py-2 gap-3">
+        <div class="flex flex-col">
+          <label for="Expiry Date" class="text-[12px] pb-1.5 font-medium">Expiry Date</label>
+          <input
+            class="border-2 border-border px-3.5 rounded-[6px]"
+            type="text"
+            placeholder="MM/YY"
+            id="Expiry Date"
+          />
+        </div>
+        <div class="flex flex-col w-full">
+          <label for="cvv" class="text-[12px] font-medium pb-1.5">cvv</label>
+          <input
+            class="border-2 border-border px-3.5 rounded-[6px] "
+            type="text"
+            placeholder="123"
+            id="Cvv"
+          />
+        </div>
+      </div>
+      <div>
+        <p class="text-[12px] pb-1.5 font-medium">Cardholder Name</p>
+        <input
+          class="border-2 border-border px-3.5 rounded-[6px] w-full"
+          type="text"
+          placeholder="John Doe"
+          id="Cardholder-Name"
+        />
+      </div>
+      <button class="w-full bg-bgBtn mt-4 p-2 rounded-[10px] text-white text-[12px]"> Pay Now </button>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
