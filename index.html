@@ -14,29 +14,25 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>-credit-card-form</title>
   </head>
-  <body class="bg-background flex flex-col justify-center items-center h-svh">
-    <section class="bg-mainBackground p-6 rounded-[10px] ">
-      <p>Payment Details</p>
-      <div>
-        <label for="cardNumber" class="text-[12px] font-medium">Card Number</label>
-        <div
-          class="border-[2px] border-border rounded-[6px] p-1 flex items-center"
+  <body
+    class="bg-background flex flex-col justify-center items-center h-svh font-sans"
+  >
+    <form
+      id="paymentform"
+      class="bg-mainBackground p-6 gap-2.5 rounded-[10px] flex flex-col gap-4"
+    >
+      <h2>Payment Details</h2>
+
+      <div class="rounded-[6px] p-1 flex flex-col">
+        <label for="cardNumber" class="text-[12px] pb-1.5 font-medium"
+          >Card Number</label
         >
-          <svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 0.375 0.375"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.013 0.138h0.35M0.05 0.238h0.15m0.05 0h0.075M0.013 0.088v0.2a0.025 0.025 0 0 0 0.025 0.025h0.3a0.025 0.025 0 0 0 0.025 -0.025v-0.2a0.025 0.025 0 0 0 -0.025 -0.025h-0.3a0.025 0.025 0 0 0 -0.025 0.025Z"
-              stroke="#999"
-              stroke-width="0.025"
-            />
-          </svg>
+        <div
+          class="border-2 border-border flex p-1.5 items-center rounded-[7px]"
+        >
+          <i class="fa-regular fa-credit-card"></i>
           <input
-            style="border: 0"
+            class="px-3.5 rounded-[6px]"
             type="text"
             name="cardNumber"
             id="cardNumber"
@@ -45,37 +41,75 @@
           />
         </div>
       </div>
-      <div class="flex items-center justify- py-2 gap-3">
+      <div class="flex gap-3">
         <div class="flex flex-col">
-          <label for="Expiry Date" class="text-[12px] pb-1.5 font-medium">Expiry Date</label>
+          <label for="Expiry Date" class="text-[12px] pb-1.5 font-medium"
+            >Expiry Date</label
+          >
           <input
-            class="border-2 border-border px-3.5 rounded-[6px]"
+            class="border-2 border-border p-1.5 rounded-[6px] w-[146px]"
             type="text"
             placeholder="MM/YY"
             id="Expiry Date"
+            required
           />
         </div>
         <div class="flex flex-col w-full">
           <label for="cvv" class="text-[12px] font-medium pb-1.5">cvv</label>
           <input
-            class="border-2 border-border px-3.5 rounded-[6px] "
+            class="border-2 border-border p-1.5 rounded-[6px] w-[146px]"
             type="text"
             placeholder="123"
             id="Cvv"
+            required
           />
         </div>
       </div>
       <div>
         <p class="text-[12px] pb-1.5 font-medium">Cardholder Name</p>
         <input
-          class="border-2 border-border px-3.5 rounded-[6px] w-full"
+          class="border-2 border-border p-1.5 rounded-[6px] w-full"
           type="text"
           placeholder="John Doe"
           id="Cardholder-Name"
         />
       </div>
-      <button class="w-full bg-bgBtn mt-4 p-2 rounded-[10px] text-white text-[12px]"> Pay Now </button>
-    </section>
+      <button
+      type="button"
+        id="btnPay"
+        class="w-full bg-bgBtn mt-4 p-2 rounded-[10px] text-white text-[12px]"
+      >
+        Pay Now
+      </button>
+    </form>
+    <div id="show-modal" class="w-full h-full bg-bgmodal fixed top-0 left-0 hidden justify-center items-center flex-col">
+      <div
+        class="w-[320px] h-[280px] bg-white flex flex-col gap-1.5 items-center justify-center fixed top-1/2 left-1/2 -translate-1/2 rounded-[10px] " 
+      >
+        <svg
+          fill="#22c55e"
+          ;
+          version="1.1"
+          id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 50 50"
+          style="enable-background: new 0 0 191.667 191.667"
+          xml:space="preserve"
+          width="50"
+          height="50"
+        >
+          <path
+            d="M25 0C11.218 0 0 11.213 0 25s11.218 25 25 25 25 -11.218 25 -25S38.782 0 25 0m14.358 20.777L23.65 36.485a3.5 3.5 0 0 1 -2.5 1.037c-0.943 0 -1.833 -0.367 -2.5 -1.037l-8.002 -8.005a3.5 3.5 0 0 1 -1.037 -2.5c0 -0.943 0.367 -1.833 1.037 -2.5a3.5 3.5 0 0 1 2.5 -1.037c0.943 0 1.833 0.367 2.5 1.037l5.503 5.503 13.208 -13.208a3.5 3.5 0 0 1 2.5 -1.037 3.538 3.538 0 0 1 2.5 6.037"
+          />
+        </svg>
+        <h1 class="text-2xl font-bold">Payment Successul!</h1>
+        <p>Your payment has been processed.</p>
+        <button id="btnDone" class="bg-bgBtn text-white px-8 py-3 mt-2.5 rounded-[8px]">
+          Done
+        </button>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
